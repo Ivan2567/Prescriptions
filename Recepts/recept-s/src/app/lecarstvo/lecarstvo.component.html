@@ -1,0 +1,17 @@
+<div *ngIf="this.someS.actualrecid != 0">
+<mat-expansion-panel  *ngFor="let lec of lecses.lecss; index as i;" class="lek" >
+  <mat-expansion-panel-header>
+    <mat-panel-title >
+      (Название)
+    </mat-panel-title>
+    <mat-panel-description>
+      В количестве {{this.lec.vipicano}} шт.
+      <!-- <mat-icon>account_circle</mat-icon> -->
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+    <mat-label>Принимать по {{this.lec.doza}} {{this.lec.edizm}} {{this.lec.kolvodoz}} раз(а) в день в течении {{this.lec.kolvokurs}} {{this.lec.kurs}}</mat-label>
+
+</mat-expansion-panel>
+</div>
+<div *ngIf="this.lecses.lecss == undefined" align="center">Выписанных средств нет</div>

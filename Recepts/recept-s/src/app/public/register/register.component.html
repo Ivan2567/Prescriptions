@@ -1,0 +1,79 @@
+<div>
+    <a [routerLink]="['../login']">К форме входа</a>
+    <!-- <a mat-list-item routerLink="login"routerLinkActive="active-link">login</a> -->
+    <mat-card>
+      <mat-card-title>Регистрация</mat-card-title>
+  
+      <mat-card-content>
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+  
+          <mat-form-field>
+            <input type="polis" matInput placeholder="Полис" formControlName="polis">
+            <!-- Here we can display error messages/hints for the user, if one of the Validators adds an error to the email 
+             with the .touched check we only display the hints if the input was touched by the users -->
+            <mat-error
+              *ngIf="this.registerForm.get('polis')?.touched && this.registerForm.get('polis')?.hasError('required')">
+              Необходимо заполнить</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input type="text" matInput placeholder="Имя" formControlName="username">
+            <mat-error
+              *ngIf="this.registerForm.get('username')?.touched && this.registerForm.get('username')?.hasError('required')">
+              Необходимо заполнить</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input type="text" matInput placeholder="Фамилия" formControlName="firstname">
+            <mat-error
+              *ngIf="this.registerForm.get('firstname')?.touched && this.registerForm.get('firstname')?.hasError('required')">
+              Необходимо заполнить</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input type="text" matInput placeholder="Отчество" formControlName="lastname">
+            <mat-error
+              *ngIf="this.registerForm.get('lastname')?.touched && this.registerForm.get('lastname')?.hasError('required')">
+              Необходимо заполнить</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input type="email" matInput placeholder="Email" formControlName="email">
+            <!-- Here we can display error messages/hints for the user, if one of the Validators adds an error to the email 
+             with the .touched check we only display the hints if the input was touched by the users -->
+            <mat-error
+              *ngIf="this.registerForm.get('email')?.touched && this.registerForm.get('email')?.hasError('required')">
+              Необходимо заполнить</mat-error>
+            <mat-error
+              *ngIf="this.registerForm.get('email')?.touched && this.registerForm.get('email')?.hasError('email')">
+              Некорректный адрес!</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input type="password" matInput placeholder="Пароль" formControlName="password">
+            <mat-error
+              *ngIf="this.registerForm.get('password')?.touched && this.registerForm.get('password')?.hasError('required')">
+              Необходимо заполнить</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input type="password" matInput placeholder="Повторите пароль" formControlName="passwordConfirm">
+            <mat-error
+              *ngIf="this.registerForm.get('passwordConfirm')?.touched && this.registerForm.get('passwordConfirm')?.hasError('required')">
+              Необходимо заполнить</mat-error>
+          </mat-form-field>
+  
+          <mat-error
+            *ngIf="this.registerForm.get('passwordConfirm')?.dirty && this.registerForm.hasError('passwordsNotMatching')">
+            Пароли должны совпадать!</mat-error>
+  
+          <div class="button">
+            <!-- Button is disabled(not clickable), if our RegisterForm contains Validation Errors -->
+            <button type="submit" mat-button [disabled]="!registerForm.valid">Зарегистрироваться</button>
+          </div>
+  
+        </form>
+      </mat-card-content>
+  
+    </mat-card>
+  </div>

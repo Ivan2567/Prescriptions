@@ -1,0 +1,14 @@
+
+  
+  <mat-card  *ngFor="let card of activecards; index as i;" class="recCard1" [style.background] = "color" >
+    <button mat-button class="cardbut" (click)="open(this.card.id, this.card.diagnoz, this.card.status, this.card.dateof, this.card.srok)">
+    <mat-card-title >Отчет от: {{otchserv.startdate}} до: {{otchserv.enddate}}</mat-card-title>
+    <!-- <mat-card-subtitle>Статус: {{this.card.status}} </mat-card-subtitle>
+    <mat-card-content >Действует с {{this.card.dateof}}  {{this.card.srok}} дней</mat-card-content> -->
+    </button>
+    <!-- <mat-card-actions align="end">
+      <button mat-raised-button disabled="false" id="btn" [style.background] = "color" (click)="comlete()">Завершить</button>
+    </mat-card-actions> -->
+  </mat-card> 
+
+

@@ -1,0 +1,37 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="'navigation'"
+      [mode]="'over'"
+      [opened]="this.serV.data === true" >
+    <mat-toolbar class="filtertoolbar">
+      <div>Содержание</div>
+        <button 
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button align = "end"
+        (click)="close()" >
+        <!-- *ngIf="isHandset$ | async" -->
+        <mat-icon aria-label="Side nav toggle icon">keyboard_arrow_right</mat-icon>
+      </button>
+    </mat-toolbar>
+
+      <app-recform></app-recform>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+  
+    <!-- Add Content Here -->
+    <mat-toolbar class="filtertoolbar">
+      <div>Фильтрация:</div>
+      <mat-radio-group aria-label="Filter" color="primary"  [(ngModel)]="filter" value="3">
+      <mat-radio-button value="1">Действующие</mat-radio-button>
+      <mat-radio-button value="2">Завершенные</mat-radio-button>
+      <mat-radio-button value="3">Все</mat-radio-button>
+      </mat-radio-group>
+    </mat-toolbar>
+    
+    <app-card [filter]="filter"></app-card>      
+    
+    
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,25 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  /* top: 65px; */
+  width: 80%;
+  height: 100%;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.filtertoolbar{
+  justify-content: space-between;
+}
+.mat-radio-button{
+  margin-left: 16px;
+}
