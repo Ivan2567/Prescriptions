@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+ <fop>
+   <renderers>
+    <renderer mime="application/pdf">
+     <fonts>
+       <directory>D:\Studshit\Server\src\main\resources</directory>
+
+     </fonts>
+    </renderer>
+  </renderers>
+ </fop>
